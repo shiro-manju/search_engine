@@ -1,4 +1,7 @@
 # search_engine
+![EOS_image](https://myoctocat.com/assets/images/base-octocat.svg](https://github.com/shiro-manju/search_engine/blob/main/info/SEO.jpg)
+
+Elasticsearchを用いた意味類似検索エンジン
 
 - python ver情報の記載
 - pipの記載
