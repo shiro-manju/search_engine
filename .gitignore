@@ -1,5 +1,6 @@
 # add file
 info/knowledge
+SearchEngine/app/models/pretrain_model/*
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
