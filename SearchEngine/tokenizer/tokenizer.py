@@ -6,7 +6,7 @@ import os
 class MecabTokenizer():
     def __init__(self, path=False):
         if not path:
-            path = os.path.abspath('SearchEngine/app/tokenizer/dic/ipadic')
+            path = os.path.abspath('SearchEngine/tokenizer/dic/ipadic')
         self.tagger = MeCab.Tagger (f'-Owakati -d {path}')
     
     def tokenizer(self, text):

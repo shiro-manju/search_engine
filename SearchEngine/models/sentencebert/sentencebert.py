@@ -4,8 +4,8 @@ import torch
 
 class SentenceBertJapanese:
     def __init__(self, device=None):
-        self.tokenizer = BertJapaneseTokenizer.from_pretrained("SearchEngine/app/models/pretrain_model/sentence-bert-base-ja-mean-tokens-v2")
-        self.model = BertModel.from_pretrained("SearchEngine/app/models/pretrain_model/sentence-bert-base-ja-mean-tokens-v2")
+        self.tokenizer = BertJapaneseTokenizer.from_pretrained("SearchEngine/models/pretrain_model/sentence-bert-base-ja-mean-tokens-v2")
+        self.model = BertModel.from_pretrained("SearchEngine/models/pretrain_model/sentence-bert-base-ja-mean-tokens-v2")
         self.model.eval()
 
         if device is None:

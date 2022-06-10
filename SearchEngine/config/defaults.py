@@ -27,4 +27,5 @@ _C.TRAIN.XLNET = True
 # search engine
 # -----------------------------------------------------------------------------
 _C.SEARCH = CN()
+_C.SEARCH.INDEFX_NAME = "test"
 _C.SEARCH.TOPN = 10

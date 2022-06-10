@@ -7,7 +7,6 @@ module_paths = [
 ]
 for module_path in module_paths:
     if module_path not in sys.path: sys.path.append(module_path)
-
  
 from utils.data_loader import DataLoader   
 from tokenizer.tokenizer import MecabTokenizer
@@ -16,6 +15,8 @@ from engine.create_index_engine import CreateIndex
 from engine.serach_engine import ElasticSearchEngine
 
 from config import cfg
+
+
 
 
 def main(args):
@@ -42,7 +43,7 @@ if __name__==('__main__'):
     parser.add_argument('--dict_path', help='Path to tokenizer dictionary', type=str, default=cfg.CONF.MECAB_DICT_PATH)
     parser.add_argument('--dataset_path', help='Path to Dataset', type=str, default=cfg.CONF.DATASET_PATH)
     parser.add_argument('--engine_type', help='Select engine-type, "create_index" or "search_engine"', type=str, default=cfg.CONF.ENGINE_TYPE)
-    parser.add_argument('--index_name', help='Input ElasticSearch Index', type=str, default="test")
+    parser.add_argument('--index_name', help='Input ElasticSearch Index', type=str, default=cfg.SEARCH.INDEFX_NAME)
     parser.add_argument('--topn', help='Number of Getting resopnses', type=str, default=cfg.SEARCH.TOPN)
    
     args = parser.parse_args() 

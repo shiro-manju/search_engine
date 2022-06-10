@@ -8,7 +8,7 @@ import yaml
 class CreateIndex:
     def __init__(self):
         self.es = Elasticsearch("http://localhost:9200")
-        self.es_config_path = 'SearchEngine/app/engine/elasticsearch/setting/elasticsearch.yml'
+        self.es_config_path = 'SearchEngine/engine/elasticsearch/setting/elasticsearch.yml'
     
     def _deleate_index(self, index_name):
         self.es.indices.delete(index=index_name, ignore=[404])

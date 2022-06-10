@@ -3,8 +3,8 @@ import torch
 
 class XLNet():
     def __init__(self):
-        self.model_tokenizer = XLNetTokenizer.from_pretrained("SearchEngine/app/models/pretrain_model/xlnet-japanese")
-        self.model = XLNetModel.from_pretrained("SearchEngine/app/models/pretrain_model/xlnet-japanesee")
+        self.model_tokenizer = XLNetTokenizer.from_pretrained("SearchEngine/models/pretrain_model/xlnet-japanese")
+        self.model = XLNetModel.from_pretrained("SearchEngine/models/pretrain_model/xlnet-japanese")
          
     def embdding(self, prompt: str):
         inputs = self.model_tokenizer(prompt, add_special_tokens=False, return_tensors="pt")
