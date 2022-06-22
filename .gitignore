@@ -1,7 +1,7 @@
 # add file
 info/knowledge
 SearchEngine/app/models/pretrain_model/*
-slackbot/slackbot_settings.py
+MakeDataset/ScrapingData/png_data
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
