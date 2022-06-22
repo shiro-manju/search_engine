@@ -17,19 +17,18 @@ class ElasticSearchEngine:
                     "match_all": {}
                 },
                 "script": {
-                    "source": "cosineSimilarity(params.query_vector, doc['article_vector']) + 1.0",
+                    "source": "cosineSimilarity(params.query_vector, 'article_vector') + 1.0",
                 "params": {"query_vector": query_vector}
                 }
             }
         }
-        
         
         response = self.es.search(
             index=index_name,
             body={
                 "size": topn,
                 "query": query_script,
-                "_source": {"includes": ["title", "category", "article"]}
+                "_source": {"includes": ["news_id", "title", "category", "article", "img_url", "page_url"]}
             }
         )
         

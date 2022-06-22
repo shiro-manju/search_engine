@@ -22,20 +22,20 @@ brew install homebrew/cask-versions/java8 --cask
 
 ```
 # Linux
-$ cd install_pkg
-$ wget https://artifacts.elastic.co/downloads/elasticsearch/elasticsearch-6.8.0-linux-x86_64.tar.gz
-$ tar xvf elasticsearch-7.5.0-linux-x86_64.tar.gz
+cd install_pkg
+wget https://artifacts.elastic.co/downloads/elasticsearch/elasticsearch-6.8.0-linux-x86_64.tar.gz
+tar xvf elasticsearch-7.5.0-linux-x86_64.tar.gz
  
 
 # MacOS
-$ brew tap elastic/tap
-$ brew install elastic/tap/elasticsearch-full
-$ brew install kibana
+brew tap elastic/tap
+brew install elastic/tap/elasticsearch-full
+brew install kibana
 
 
-$ cp /usr/local/etc/elasticsearch/elasticsearch.yml .
-$ cp /usr/local/etc/elasticsearch/jvm.options .
-$ cp /usr/local/etc/elasticsearch/log4j2.properties .
+cp /usr/local/etc/elasticsearch/elasticsearch.yml .
+cp /usr/local/etc/elasticsearch/jvm.options .
+cp /usr/local/etc/elasticsearch/log4j2.properties .
 
 ```
 
@@ -55,6 +55,33 @@ https://huggingface.co/hajime9652/xlnet-japanese
 
 # Sntence Bert
 https://huggingface.co/sonoisa/sentence-bert-base-ja-mean-tokens-v2
+```
+
+# Slack ChatBot
+
+## Hubot用いたchatbotの作成
+https://qiita.com/raoka0000/items/8e29a08631e1dc417c7f
+
+## 環境変数の設定
+
+```
+
+touch ./slackbot/.env
+echo "API_TOKEN=<ボットのトークン>" > ./slackbot/.env
+
+```
+
+Boltを使用
+https://slack.dev/bolt-python/ja-jp/tutorial/getting-started
+
+appの　作成
+websocket enable
+
+```
+
+touch ./slackbot/.env
+echo "API_TOKEN=<ボットのトークン>" > ./slackbot/.env
+
 ```
 
 # コンペティションの内容

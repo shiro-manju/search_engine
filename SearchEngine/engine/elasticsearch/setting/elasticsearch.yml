@@ -107,7 +107,9 @@ settings:
           filter:
             - kuromoji_baseform
 mappings:
-  properties: 
+  properties:
+    news_id:
+      type: keyword
     title:
       type: text
       index: true
@@ -118,6 +120,12 @@ mappings:
       type: text
       index: true
       analyzer: my_analyzer
+    img_url:
+      type: text
+      index: true
+    page_url:
+      type: text
+      index: true 
     article_vector:
       type: dense_vector
       dims: 768

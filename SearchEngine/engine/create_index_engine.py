@@ -18,21 +18,25 @@ class CreateIndex:
         self.es.indices.flush()
 
     def _add_record(self, input_df, index_name, tokenizer, embdding_module):
+        #input_df = input_df.head(5)
         attrs = input_df.columns.values
         data = {
             '_op_type': 'index',
             '_index': index_name,
         }
 
-        for idx, (title, category, article) in tqdm(enumerate(
+        for idx, (news_id, title, category, article, img_url, page_url) in tqdm(enumerate(
             zip(
+                input_df["news_id"].values,
                 input_df["title"].values,
                 input_df["category"].values,
-                input_df["article"].values
+                input_df["article"].values,
+                input_df["img_url"].values,
+                input_df["page_url"].values
             )
         ), total=len(input_df)):
 
-            for col_idx, value in enumerate([title, category, article]):
+            for col_idx, value in enumerate([news_id, title, category, article, img_url, page_url]):
                 if attrs[col_idx] in self.properties:
                     data[attrs[col_idx]] = value
                 if attrs[col_idx] == 'article':

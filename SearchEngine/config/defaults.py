@@ -9,8 +9,8 @@ _C.CONF = CN()
 _C.CONF.DATASET_PATH = "./MakeDataset/ScrapingData/"
 _C.CONF.MECAB_DICT_PATH = "/usr/local/lib/mecab/dic/mecab-ipadic-neologd"
 
-#_C.CONF.ENGINE_TYPE = "create_index" # or search_engine
-_C.CONF.ENGINE_TYPE = "search_engine"
+_C.CONF.ENGINE_TYPE = "create_index" # or search_engine
+#_C.CONF.ENGINE_TYPE = "search_engine"
 
 
 # Use embedding model

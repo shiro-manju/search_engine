@@ -21,21 +21,21 @@ class SentenceBertJapanese:
         return torch.sum(token_embeddings * input_mask_expanded, 1) / torch.clamp(input_mask_expanded.sum(1), min=1e-9)
 
 
-    def encode(self, sentences):
+    def embdding(self, sentences):
         all_embeddings = []
         sentences = [x for x in sentences.split("。") if len(x) > 3]
         iterator = range(0, len(sentences), self.batch_size)
         for batch_idx in iterator:
             batch = sentences[batch_idx:batch_idx + self.batch_size]
 
-            encoded_input = self.tokenizer.batch_encode_plus(batch, padding="longest", 
-                                           truncation=True, return_tensors="pt").to(self.device)
+            encoded_input = self.tokenizer.batch_encode_plus(batch, padding="longest", truncation=True, return_tensors="pt").to(self.device)
             model_output = self.model(**encoded_input)
             sentence_embeddings = self._mean_pooling(model_output, encoded_input["attention_mask"]).to('cpu')
 
             all_embeddings.extend(sentence_embeddings)
 
         return torch.norm(torch.stack(all_embeddings), p=2, dim=0)
+
 
 if __name__==('__main__'):
     import MeCab
@@ -45,5 +45,5 @@ if __name__==('__main__'):
     prompt = tokenizer.parse(prompt)
 
     sbert = SentenceBertJapanese()
-    sentence_embedding = sbert.encode(prompt )
+    sentence_embedding = sbert.embdding(prompt )
     print(sentence_embedding.shape)

@@ -9,7 +9,6 @@ class XLNet():
     def embdding(self, prompt: str):
         inputs = self.model_tokenizer(prompt, add_special_tokens=False, return_tensors="pt")
         outputs = self.model(**inputs)
-        #print(outputs)
         last_hidden_states = outputs.last_hidden_state
         return torch.norm(last_hidden_states[0], p=2, dim=0)
 
